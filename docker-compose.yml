@@ -1,0 +1,46 @@
+version: "3.4"
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "443:443"
+      - "80:80"
+    environment:
+      NGINX_ENVSUBST_OUTPUT_DIR: "/etc/nginx/sites-available"
+    env_file:
+      - .env
+    volumes:
+      - ./mysite.cert:/etc/ssl/mysite.cert
+      - ./mysite.key:/etc/ssl/mysite.key
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./sites-available/:/etc/nginx/sites-available/:rw
+      - ./ss-site.conf.template:/etc/nginx/templates/ss-site.conf.template:rw
+
+  echoip:
+    image: mpolden/echoip:latest
+    container_name: echoip
+    restart: unless-stopped
+    command: -H X-Forwarded-For -r -l "0.0.0.0:8080"
+    depends_on:
+      - nginx
+    expose:
+      - 8080
+
+  ss-v2ray:
+    image: registry.gitlab.com/relers/shadowsocks-compose
+    container_name: ss-v2ray
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - 1234
+    depends_on:
+      - nginx
+    env_file:
+      - .env
+    # looks shitty, may be entrypoint.sh better?
+    entrypoint: [ "ssserver", "--server-addr","0.0.0.0:1234", "--log-without-time", "--tcp-fast-open", "--dns", "${DNS}", "--encrypt-method", "${SS_CIPHER}", "--password", "${PASSWORD}", "--plugin", "v2ray-plugin", "--plugin-opts", "server;fast-open;host=${DOMAIN};path=${SS_PATH}"]
