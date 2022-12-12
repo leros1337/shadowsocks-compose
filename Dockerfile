@@ -1,6 +1,7 @@
-# docker build -t registry.gitlab.com/relers/shadowsocks-compose:latest .
+# docker build -t ghcr.io/relers/ssserver-rust-v2ray:1.14.3 .
+FROM ghcr.io/shadowsocks/ssserver-rust:v1.14.3
 
-FROM ghcr.io/shadowsocks/ssserver-rust:latest
+LABEL org.opencontainers.image.source https://github.com/relers/shadowsocks-compose
 
 USER root
 

@@ -55,10 +55,3 @@ docker logs -f ss-v2ray
 ## Android Client
 * Download from gplay [shadowsocks](https://play.google.com/store/apps/details?id=com.github.shadowsocks&hl=ru&gl=US) and [v2ray-plugin](https://play.google.com/store/apps/details?id=com.github.shadowsocks.plugin.v2ray)
 * Watch 6-8 screenshots, dont forget change path according to SS_PATH inside .env
-
-## To Do
-- [X] Readme
-- [ ] Create Github Wiki
-- [ ] Faq for windows/linux [v2rayA)](https://github.com/v2rayA/v2rayA) / [tun2socks](https://github.com/xjasonlyu/tun2socks)?
-- [ ] [ss-manager](https://github.com/shadowsocks/shadowsocks-manager)
-- [ ] Extend echoip (country,geo,e.t.c.)
