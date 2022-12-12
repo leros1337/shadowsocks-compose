@@ -30,7 +30,7 @@ services:
       - 8080
 
   ss-v2ray:
-    image: docker pull ghcr.io/relers/ssserver-rust-v2ray:1.14.3
+    image: ghcr.io/relers/ssserver-rust-v2ray:1.14.3
     container_name: ss-v2ray
     restart: unless-stopped
     build:
