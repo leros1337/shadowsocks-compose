@@ -5,6 +5,9 @@ Thanks to [vanyaindigo](https://github.com/vanyaindigo), [ss-rust](https://githu
 
 * Any PR welcome
 
+## Important info
+I wont maintain this repository as v2ray plugin is not good as vless+x_reality protocol, so consider use this https://github.com/alireza0/x-ui, if you are boring to setup by yourself just buy chip subscription on https://xeovo.net
+
 ## Requirements
 
 * Domain name ([freenom](https://www.freenom.com/ru/index.html) or [porkbun](https://porkbun.com/) chip .top .xyz), dont forget about NameServers
