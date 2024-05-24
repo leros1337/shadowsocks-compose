@@ -6,7 +6,7 @@ Thanks to [vanyaindigo](https://github.com/vanyaindigo), [ss-rust](https://githu
 * Any PR welcome
 
 ## Important info
-I wont maintain this repository as v2ray plugin is not good as vless+x_reality protocol, so consider use this https://github.com/alireza0/x-ui, if you are boring to setup by yourself just buy chip subscription on [https://xeovo.net](https://xeovo.com/)
+I wont maintain this repository as v2ray plugin is not good as vless+x_reality protocol, so consider use this https://github.com/alireza0/x-ui, if you are boring to setup by yourself just buy chip subscription on [https://xeovo.com](https://xeovo.com/)
 
 ## Requirements
 
